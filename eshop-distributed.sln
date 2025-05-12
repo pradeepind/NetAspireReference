@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aspire", "aspire", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frontend", "frontend", "{788D8B29-D121-4BBD-BD21-09321B2E0C12}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{A8D08486-3189-4A92-9678-1E21DDC1FF23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppHost", "AppHost\AppHost.csproj", "{EADE3613-9F47-407A-9BAB-BC9E7904576A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceDefaults", "ServiceDefaults\ServiceDefaults.csproj", "{A237D573-7C82-4D3E-8DEC-8C7EF6958C7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog", "Catalog\Catalog.csproj", "{C4F761E8-674E-7804-3E8F-374E41B75BE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket", "Basket\Basket.csproj", "{11C93E6E-64C1-2C2D-B301-852C7CCA6F88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EADE3613-9F47-407A-9BAB-BC9E7904576A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EADE3613-9F47-407A-9BAB-BC9E7904576A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EADE3613-9F47-407A-9BAB-BC9E7904576A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EADE3613-9F47-407A-9BAB-BC9E7904576A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A237D573-7C82-4D3E-8DEC-8C7EF6958C7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A237D573-7C82-4D3E-8DEC-8C7EF6958C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A237D573-7C82-4D3E-8DEC-8C7EF6958C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A237D573-7C82-4D3E-8DEC-8C7EF6958C7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4F761E8-674E-7804-3E8F-374E41B75BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4F761E8-674E-7804-3E8F-374E41B75BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4F761E8-674E-7804-3E8F-374E41B75BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4F761E8-674E-7804-3E8F-374E41B75BE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11C93E6E-64C1-2C2D-B301-852C7CCA6F88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11C93E6E-64C1-2C2D-B301-852C7CCA6F88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11C93E6E-64C1-2C2D-B301-852C7CCA6F88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11C93E6E-64C1-2C2D-B301-852C7CCA6F88}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EADE3613-9F47-407A-9BAB-BC9E7904576A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{A237D573-7C82-4D3E-8DEC-8C7EF6958C7C} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C4F761E8-674E-7804-3E8F-374E41B75BE9} = {A8D08486-3189-4A92-9678-1E21DDC1FF23}
+		{11C93E6E-64C1-2C2D-B301-852C7CCA6F88} = {A8D08486-3189-4A92-9678-1E21DDC1FF23}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {272D7767-E940-4E30-A652-67756033FD28}
+	EndGlobalSection
+EndGlobal
