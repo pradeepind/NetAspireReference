@@ -26,5 +26,20 @@ namespace Basket.Services
             await cache.RemoveAsync(userName);
         }
 
+         internal async Task UpdateBasketItemProductPrices(int productId, decimal price)
+    {
+        // IDistributedCache not supported list of keys function
+        // https://github.com/dotnet/runtime/issues/36402
+
+        var basket = await GetBasket("swn");
+
+        var item = basket!.Items.FirstOrDefault(x => x.ProductId == productId);
+        if (item != null)
+        {
+            item.Price = price;
+            await cache.SetStringAsync(basket.UserName, JsonSerializer.Serialize(basket));
+        }
+    }
+
     }
 }

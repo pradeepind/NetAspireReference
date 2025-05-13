@@ -10,6 +10,7 @@ builder.Services.AddHttpClient<CatalogApiClient>(client =>
     client.BaseAddress = new Uri("https+http://catalog");
     client.DefaultRequestHeaders.Add("Accept", "application/json");
 });
+builder.Services.AddMassTransitWithAssemblies(Assembly.GetExecutingAssembly());
 
 var app = builder.Build();
 
