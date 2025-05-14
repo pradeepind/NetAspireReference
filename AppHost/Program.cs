@@ -21,6 +21,11 @@ var rabbitmq = builder
     .WithDataVolume()
     .WithLifetime(ContainerLifetime.Persistent);
 
+var keycloak = builder
+    .AddKeycloak("keycloak", 8080)
+    .WithDataVolume()
+    .WithLifetime(ContainerLifetime.Persistent);
+
 // Projects
 var catalog = builder
     .AddProject<Projects.Catalog>("catalog")
@@ -34,8 +39,10 @@ builder
     .WithReference(cache)
     .WithReference(rabbitmq)
     .WithReference(catalog)
+    .WithReference(keycloak)
     .WaitFor(cache)
     .WaitFor(rabbitmq)
-    .WaitFor(catalog);
+    .WaitFor(catalog)
+    .WaitFor(keycloak);
 
 builder.Build().Run();

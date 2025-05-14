@@ -1,12 +1,15 @@
 @Basket_HostAddress = https://localhost:7182/basket
+@accessToken = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJvUkdJNmZUeVRvSG1yN1BYRjlRZksxX01NZ1BORnFTS1lmbktWYXhnd21rIn0.eyJleHAiOjE3NDcyMjY4NDEsImlhdCI6MTc0NzIyNjU0MSwianRpIjoiODg2MWRiMjQtYTA2Ni00ZDY1LWI4Y2EtYWZjOTg5Nzg5ZDMyIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9lc2hvcCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJlYTQ1ZGU0MS1iY2UzLTRmNWItOTNjYy00Y2FkZTA1ZmM1YjEiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJlc2hvcC1jbGllbnQiLCJzaWQiOiJiZDg4OTE5ZC0yYzYwLTRhOWYtYjIxZi05YTBhNDM4ZjU0ZDciLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1lc2hvcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6InRlc3QgdGVzdCIsInByZWZlcnJlZF91c2VybmFtZSI6InRlc3QiLCJnaXZlbl9uYW1lIjoidGVzdCIsImZhbWlseV9uYW1lIjoidGVzdCIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSJ9.j6vbOgjhK4XpAYVYh02iGZSb8JSALtDXhCnxUFC4xYyQ6oLeBfkcXDQV8g32ct4shGe_cNgDgFOU03b3G2cMLzniEC3hbJlWHVg5MfoTA0mwzp7o8VQFbUEGQYgJhnLhspapM7aw1_lybEy-jyIwI2Fag8GbyB8hCs0HIaU6fJveqYLj1wsRMQXNWSbDG0BSl1fll-bZR48gOiC2icaRPJit0jVdcNFuT-oG6S4AxiTuyXu-nQI7PTVhVbm8c4UktFpJIOcpTUzj3_2XqzGVQA3-BzRwYGv2R4DnDARcIoOr9rUip0Xt0ZI9bMGvSxyulVo5zaZosz4zbjdktLU6Vw
 
 GET {{Basket_HostAddress}}/swn
 Accept: application/json
+Authorization: Bearer {{accessToken}}
 
 ###
 
 POST {{Basket_HostAddress}}
 Content-Type: application/json
+Authorization: Bearer {{accessToken}}
 
 {
     "UserName": "swn",
@@ -30,5 +33,46 @@ Content-Type: application/json
 
 ###
 
+POST {{Basket_HostAddress}}
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+    "UserName": "swn",
+    "Items": [
+        {
+        "Quantity": 3,
+        "Color": "Red",
+        "Price": 0,
+        "ProductId": 1,
+        "ProductName": "Solar Powered Flashlight"
+        },
+        {
+        "Quantity": 4,
+        "Color": "Blue",
+        "Price": 0,
+        "ProductId": 2,
+        "ProductName": "Hiking Poles"
+        },
+        {
+        "Quantity": 5,
+        "Color": "Blue",
+        "Price": 0,
+        "ProductId": 9,
+        "ProductName": "Camping Tent"
+        }
+    ]
+}
+
+###
+
 DELETE {{Basket_HostAddress}}/swn
 Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+###
+
+POST http://localhost:8080/realms/eshop/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&client_id=eshop-client&scope=email openid&username=test&password=1234
